@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Błąd";
+}
+
+@{
+    ViewBag.Title = "Błąd";
+}
+
+<h2>
+    Przepraszamy, wystąpił błąd podczas przetwarzania żądania.
+</h2>
+
+<p>@ViewBag.Error</p>
+
+<p>
+    <button onclick="window.location.href = '/Account/LogOn';">Logowanie</button>
+    <button onclick="window.location.href = '/Account/Register';">Rejestracja</button>
+    <button onclick="window.location.href = '/Account/Activate';">Aktywacja konta</button>
+</p>
+<script type="text/javascript">
+    setTimeout(function () {
+        window.location.href = '/Account/LogOn';
+    }, 7000);
+</script>

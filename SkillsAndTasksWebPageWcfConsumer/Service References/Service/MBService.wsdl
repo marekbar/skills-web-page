@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MBService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IMBService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://127.0.0.1/MBService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://127.0.0.1/MBService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://127.0.0.1/MBService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SkillsAndTasks" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMBService_createAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:createAccount" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:createSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:createTask" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTask" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createUserSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:createUserSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_createUserSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createUserSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteUserSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_deleteUserSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateUserSkill_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserSkill" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_updateUserSkill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserSkillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_loginExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:loginExists" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_loginExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_activateByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:activateByCode" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_activateByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:activateByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_getDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IMBService_getDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMBService">
+    <wsdl:operation name="createAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/createAccount" message="tns:IMBService_createAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/createAccountResponse" message="tns:IMBService_createAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/createSkill" message="tns:IMBService_createSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/createSkillResponse" message="tns:IMBService_createSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/deleteSkill" message="tns:IMBService_deleteSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/deleteSkillResponse" message="tns:IMBService_deleteSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/updateSkill" message="tns:IMBService_updateSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/updateSkillResponse" message="tns:IMBService_updateSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/createTask" message="tns:IMBService_createTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/createTaskResponse" message="tns:IMBService_createTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/deleteTask" message="tns:IMBService_deleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/deleteTaskResponse" message="tns:IMBService_deleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/updateTask" message="tns:IMBService_updateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/updateTaskResponse" message="tns:IMBService_updateTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createUserSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/createUserSkill" message="tns:IMBService_createUserSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/createUserSkillResponse" message="tns:IMBService_createUserSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUserSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/deleteUserSkill" message="tns:IMBService_deleteUserSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/deleteUserSkillResponse" message="tns:IMBService_deleteUserSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserSkill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/updateUserSkill" message="tns:IMBService_updateUserSkill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/updateUserSkillResponse" message="tns:IMBService_updateUserSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loginExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/loginExists" message="tns:IMBService_loginExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/loginExistsResponse" message="tns:IMBService_loginExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="activateByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/activateByCode" message="tns:IMBService_activateByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/activateByCodeResponse" message="tns:IMBService_activateByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/login" message="tns:IMBService_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/loginResponse" message="tns:IMBService_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMBService/getDatabase" message="tns:IMBService_getDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMBService/getDatabaseResponse" message="tns:IMBService_getDatabase_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IMBService" type="tns:IMBService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IMBService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createAccount">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/createAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/createSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/deleteSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/updateSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createTask">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/createTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTask">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/deleteTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/updateTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUserSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/createUserSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUserSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/deleteUserSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserSkill">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/updateUserSkill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginExists">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/loginExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateByCode">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/activateByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatabase">
+      <soap12:operation soapAction="http://tempuri.org/IMBService/getDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MBService">
+    <wsdl:port name="WSHttpBinding_IMBService" binding="tns:WSHttpBinding_IMBService">
+      <soap12:address location="https://127.0.0.1/MBService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://127.0.0.1/MBService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

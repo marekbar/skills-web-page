@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Umiejętności i zadania";
+}
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="/Scripts/extensions.js"></script>
+<script type="text/javascript" src="/Scripts/data.js"></script>
+<h2 id="titleText">Umiejętności i zadania</h2>
+<div style="margin-bottom: 10px;">
+    Wyszukiwarka: <input type="text" style="width: 365px;" id="filter" />
+</div>
+<div>
+    <button onclick="getSkills();">Umiejętności</button>
+    <button onclick="getTasks();">Zadania</button>
+    <button onclick="getUsers();">Użytkownicy</button>
+    <button onclick="getUS();">Umiejętności użytkowników</button>
+</div>
+
+<div id="data" style="margin-top: 10px;">
+
+</div>
+
+<div><p>Uwaga! Niniejszy klient służy tylko do podglądu danych. Edycja jest zabroniona.</p></div>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNet.Providers.Core.pl</id>
+    <version>1.1</version>
+    <title>Zasoby dla języka polskiego dotyczące produktu Microsoft ASP.NET Universal Providers Core Libraries</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/system.web.providers-1.0-eula.htm</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Ten pakiet zawiera zestawy satelickie dla języka polskiego dotyczące produktu ASP.NET Universal Providers.</description>
+    <summary>Zasoby dla języka polskiego dotyczące pakietu Microsoft.AspNet.Providers.Core</summary>
+    <language>pl</language>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Providers.Core" version="[1.1]" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>
